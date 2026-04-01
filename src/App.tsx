@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, MouseEvent } from 'react';
 import { Menu, X, Play, MapPin, Mail, Phone, Instagram, Music, Youtube, Pause } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -126,6 +126,28 @@ export default function App() {
     { name: '联系我们', href: '#联系我们' },
   ];
 
+  const scrollToSection = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    // 关闭手机端菜单
+    setIsMenuOpen(false);
+
+    const targetId = decodeURIComponent(href.replace('#', ''));
+    let element = document.getElementById(targetId);
+    
+    // 备选方案：通过 querySelector 查找
+    if (!element) {
+      element = document.querySelector(`[id="${targetId}"]`);
+    }
+    
+    if (element) {
+      // 延迟一小会儿执行滚动，确保菜单关闭动画不影响位置计算
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   const members = [
     { name: '旋转球', role: '主唱 / 节奏吉他', desc: '深圳技术大学音乐协会成员。乐队主心骨，是乐队坚强后盾及决策敲定人。' },
     { name: '摇滚丸', role: '主音吉他', desc: '八年演奏经验。用琴弦说话，为每个音符注入灵魂热度。' },
@@ -216,12 +238,16 @@ export default function App() {
     <div className="min-h-screen bg-[#121212] text-white font-sans selection:bg-[#e63946] selection:text-white">
       {/* 导航栏 */}
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
           isScrolled ? 'bg-[#121212]/95 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="#首页" className="text-2xl font-black tracking-tighter text-[#e63946]">
+          <a 
+            href="#首页" 
+            onClick={(e) => scrollToSection(e, '#首页')}
+            className="text-2xl font-black tracking-tighter text-[#e63946]"
+          >
             NEOZARK
           </a>
 
@@ -231,6 +257,7 @@ export default function App() {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
                 className="text-sm font-medium hover:text-[#e63946] transition-colors duration-200"
               >
                 {link.name}
@@ -254,15 +281,15 @@ export default function App() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-[#121212] border-t border-white/10 overflow-hidden"
+              className="md:hidden bg-[#121212] border-t border-white/10 overflow-hidden pointer-events-auto relative z-[101]"
             >
               <div className="flex flex-col p-6 space-y-4">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-lg font-medium hover:text-[#e63946]"
+                    onClick={(e) => scrollToSection(e, link.href)}
+                    className="text-lg font-medium hover:text-[#e63946] block w-full py-2 transition-colors cursor-pointer"
                   >
                     {link.name}
                   </a>
@@ -312,6 +339,7 @@ export default function App() {
             <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
               <a
                 href="#关于我们"
+                onClick={(e) => scrollToSection(e, '#关于我们')}
                 className="group relative inline-block bg-[#e63946] text-white px-10 py-4 text-xl font-black hover:bg-white hover:text-black transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(230,57,70,0.4)]"
               >
                 <span className="relative z-10">立即开启</span>
@@ -319,6 +347,7 @@ export default function App() {
               </a>
               <a
                 href="#视频作品"
+                onClick={(e) => scrollToSection(e, '#视频作品')}
                 className="text-white/70 hover:text-[#e63946] font-bold tracking-widest transition-colors flex items-center gap-2"
               >
                 <Play size={20} fill="currentColor" /> 观看演出视频
