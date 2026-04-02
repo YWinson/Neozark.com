@@ -117,6 +117,15 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const [heroImageLoaded, setHeroImageLoaded] = useState(false);
+
+  // 预加载 Hero 图片
+  useEffect(() => {
+    const img = new Image();
+    img.src = "https://github.com/YWinson/Neozark/blob/main/DSC01514.JPG?raw=true";
+    img.onload = () => setHeroImageLoaded(true);
+  }, []);
+
   const navLinks = [
     { name: '首页', href: '#首页' },
     { name: '关于我们', href: '#关于我们' },
@@ -307,12 +316,20 @@ export default function App() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 z-10" />
         
         {/* 乐队宣传图 - 建议替换为您的真实图片路径 */}
-        <img
-          src="https://github.com/YWinson/Neozark/blob/main/DSC01514.JPG?raw=true"
-          alt="Neozark 乐队宣传图"
-          className="absolute inset-0 w-full h-full object-cover brightness-[0.7] transition-transform duration-[10s] hover:scale-110"
-          referrerPolicy="no-referrer"
-        />
+        <div className={`absolute inset-0 transition-opacity duration-1000 ${heroImageLoaded ? 'opacity-100' : 'opacity-0'}`}>
+          <img
+            src="https://github.com/YWinson/Neozark/blob/main/DSC01514.JPG?raw=true"
+            alt="Neozark 乐队宣传图"
+            className="absolute inset-0 w-full h-full object-cover brightness-[0.7] transition-transform duration-[10s] hover:scale-110"
+            referrerPolicy="no-referrer"
+            onLoad={() => setHeroImageLoaded(true)}
+          />
+        </div>
+        
+        {/* 加载中的占位背景 */}
+        {!heroImageLoaded && (
+          <div className="absolute inset-0 bg-[#121212] animate-pulse" />
+        )}
 
         <div className="relative z-20 text-center px-6 max-w-5xl">
           <motion.div
