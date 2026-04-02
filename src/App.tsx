@@ -58,7 +58,7 @@ function VideoCard({ video }: any) {
             src={isBilibili ? undefined : video.videoUrl}
             poster={video.thumbnail}
             className={`w-full h-full object-cover transition-all duration-700 ${
-              isPlaying ? 'grayscale-0' : 'grayscale group-hover:grayscale-0 group-hover:scale-105'
+              isPlaying ? '' : 'group-hover:scale-105'
             }`}
             onClick={togglePlay}
             onPlay={() => setIsPlaying(true)}
@@ -310,7 +310,7 @@ export default function App() {
         <img
           src="https://github.com/YWinson/Neozark/blob/main/DSC01514.JPG?raw=true"
           alt="Neozark 乐队宣传图"
-          className="absolute inset-0 w-full h-full object-cover grayscale-[0.5] brightness-[0.7] transition-transform duration-[10s] hover:scale-110"
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.7] transition-transform duration-[10s] hover:scale-110"
           referrerPolicy="no-referrer"
         />
 
@@ -379,12 +379,14 @@ export default function App() {
           </div>
           <div className="relative group">
             <div className="absolute -inset-4 border-2 border-[#e63946] opacity-30 group-hover:opacity-100 transition-opacity duration-500" />
-            <img
-              src="https://github.com/YWinson/Neozark/blob/main/DSC01563.JPG?raw=true"
-              alt="乐队排练"
-              className="relative w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
-              referrerPolicy="no-referrer"
-            />
+            <div className="overflow-hidden rounded-sm">
+              <img
+                src="https://github.com/YWinson/Neozark/blob/main/DSC01563.JPG?raw=true"
+                alt="乐队排练"
+                className="relative w-full h-auto transition-all duration-700 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -427,7 +429,7 @@ export default function App() {
                 <img 
                   src={tour.image} 
                   alt={tour.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-2 left-2 bg-[#e63946] text-white text-[10px] font-black px-2 py-0.5 italic">
