@@ -53,18 +53,29 @@ function VideoCard({ video }: any) {
         />
       ) : (
         <>
-          <video
-            ref={videoRef}
-            src={isBilibili ? undefined : video.videoUrl}
-            poster={video.thumbnail}
+          {/* 使用 img 标签作为封面，因为 poster 属性在某些移动端浏览器下无法处理 B站 的 Referrer 限制 */}
+          <img 
+            src={video.thumbnail} 
+            alt={video.title}
             className={`w-full h-full object-cover transition-all duration-700 ${
-              isPlaying ? '' : 'group-hover:scale-105'
+              isPlaying ? 'opacity-0' : 'opacity-100 group-hover:scale-105'
             }`}
-            onClick={togglePlay}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            playsInline
+            referrerPolicy="no-referrer"
           />
+          
+          {!isBilibili && (
+            <video
+              ref={videoRef}
+              src={video.videoUrl}
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
+                isPlaying ? 'opacity-100' : 'opacity-0'
+              }`}
+              onClick={togglePlay}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              playsInline
+            />
+          )}
           
           {/* 播放按钮遮罩 */}
           <div 
@@ -499,6 +510,7 @@ export default function App() {
                   src="https://i0.hdslb.com/bfs/openplatform/00fdbafe690123e07d6466c0a333cee86c4ff87f.jpg@1e_1c.webp" 
                   alt="Bilibili 二维码"
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = "https://picsum.photos/seed/biliqr/200/200";
                   }}
@@ -516,6 +528,7 @@ export default function App() {
                   src="https://i0.hdslb.com/bfs/openplatform/704cbb489f80643632a15c27cf42b4d36541e94c.jpg@1e_1c.webp" 
                   alt="小红书 二维码"
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = "https://picsum.photos/seed/xhsqr/200/200";
                   }}
