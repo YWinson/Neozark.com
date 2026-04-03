@@ -122,7 +122,7 @@ export default function App() {
   // 预加载 Hero 图片
   useEffect(() => {
     const img = new Image();
-    img.src = "https://github.com/YWinson/Neozark/blob/main/DSC01514.JPG?raw=true";
+    img.src = "https://i0.hdslb.com/bfs/openplatform/fe8939b9663e1156691422f24822c942513fff40.jpg@1e_1c.webp";
     img.onload = () => setHeroImageLoaded(true);
   }, []);
 
@@ -170,37 +170,37 @@ export default function App() {
       date: '2024.10.26', 
       title: '汕尾陆河油柑丰收节音乐节，并被珠江卫视报道', 
       location: '汕尾陆河',
-      image: 'https://github.com/YWinson/Neozark/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260402004740_230_254.jpg?raw=true'
+      image: 'https://i0.hdslb.com/bfs/openplatform/58795b6cb251f203e00d7647d81c820a113efcd6.jpg@1e_1c.webp'
     },
     { 
       date: '2025.1.2', 
       title: '深圳高校音乐节', 
       location: 'MAO 海上世界店',
-      image: 'https://github.com/YWinson/Neozark/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260402004815_231_254.jpg?raw=true'
+      image: 'https://i0.hdslb.com/bfs/openplatform/c09e9d42cdb4643d3087f357943f1cbbac17748d.jpg@1e_1c.webp'
     },
     { 
       date: '2025.3.21', 
       title: '婚礼商单演出', 
       location: '深圳观澜湖度假酒店',
-      image: 'https://github.com/YWinson/Neozark/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260402004856_232_254.jpg?raw=true'
+      image: 'https://i0.hdslb.com/bfs/openplatform/74aa0813b6fa4d76014d3b90865bec2d65c9121b.jpg@1e_1c.webp'
     },
     { 
       date: '2025.06.23', 
       title: '同柬埔寨公主进行新歌MV录制暨路演活动（受深圳广播电视台邀请）', 
       location: '深业上城',
-      image: 'https://github.com/YWinson/Neozark/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260402004926_233_254.jpg?raw=true'
+      image: 'https://i0.hdslb.com/bfs/openplatform/6b5761de277c8f2ba6e23c31f1a61eb5754c0b7a.jpg@1e_1c.webp'
     },
     { 
       date: '2025.12.30', 
       title: '元旦音乐嘉年华', 
       location: '深汕合作区',
-      image: 'https://github.com/YWinson/Neozark/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260401223918_224_254.jpg?raw=true'
+      image: 'https://i0.hdslb.com/bfs/openplatform/399f0fc79c6a709743cb9482bb06094b848362d8.jpg@1e_1c.webp'
     },
     { 
       date: '2026.3.28', 
       title: '华凯易佰上市公司年会', 
       location: '燕子湖国际会展中心',
-      image: 'https://github.com/YWinson/Neozark/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260401223843_223_254.jpg?raw=true'
+      image: 'https://i0.hdslb.com/bfs/openplatform/85066a064fc09b412194244b7da8bd212b641dff.jpg@1e_1c.webp'
     },
   ];
 
@@ -208,37 +208,37 @@ export default function App() {
     {
       title: '永不失联的爱',
       date: '2025.06.23',
-      thumbnail: 'https://github.com/YWinson/Neozark/blob/main/9a88de833c4013750de299d8bae2df371fad9015.jpg?raw=true',
+      thumbnail: 'https://i0.hdslb.com/bfs/openplatform/0cd18769ecc2a9b233e1f675cf2e659c66acf7d1.jpg@1e_1c.webp',
       videoUrl: 'https://www.bilibili.com/video/BV1eA9EBrEu5/?share_source=copy_web&vd_source=156ce83d5268220b4f08d90328b6d141',
     },
     {
       title: '大石碎胸口',
       date: '2025.1.2',
-      thumbnail: 'https://github.com/YWinson/Neozark/blob/main/fa1b550b3ab0ea988c50919e8e96887c3256588f.jpg?raw=true',
+      thumbnail: 'https://i0.hdslb.com/bfs/openplatform/ef94f9fc22853fd4bc25c1a72d79ecad5b632efb.jpg@1e_1c.webp',
       videoUrl: 'https://www.bilibili.com/video/BV17NrVYGEBQ/?share_source=copy_web&vd_source=1b51692012f78f5d952892bdcf40aa7b',
     },
     {
       title: '男孩别哭',
       date: '2026.3.28',
-      thumbnail: 'https://github.com/YWinson/Neozark/blob/main/8754214f2173a296ce16cb6285bfd20011a8673e.jpg?raw=true',
+      thumbnail: 'https://i0.hdslb.com/bfs/openplatform/fadeeb235f30eb9a3d090dd61fdae106284fcffe.jpg@1e_1c.webp',
       videoUrl: 'https://www.bilibili.com/video/BV1eA9EBrETg/?share_source=copy_web&vd_source=156ce83d5268220b4f08d90328b6d141',
     },
     {
       title: '不再犹豫',
       date: '2024.12.22',
-      thumbnail: 'https://github.com/YWinson/Neozark/blob/main/846f3cfc42847ae5b5ace3bac13f7d87b011d780.jpg?raw=true',
+      thumbnail: 'https://i0.hdslb.com/bfs/openplatform/992917c01e531c3b4ac983a1eb2ae3fd59c00ef6.jpg@1e_1c.webp',
       videoUrl: 'https://www.bilibili.com/video/BV1iRkvY3EBk/?share_source=copy_web&vd_source=156ce83d5268220b4f08d90328b6d141',
     },
     {
       title: '闪光的回忆',
       date: '2025.11.27',
-      thumbnail: 'https://github.com/YWinson/Neozark/blob/main/3d789d94af2a1e438df192d659ba1e66998f3cbc.jpg?raw=true',
+      thumbnail: 'https://i0.hdslb.com/bfs/openplatform/4b6bd4e384b451b43405e7002211f92d55e9791d.jpg@1e_1c.webp',
       videoUrl: 'https://www.bilibili.com/video/BV15DSTBKELR/?share_source=copy_web&vd_source=156ce83d5268220b4f08d90328b6d141',
     },
     {
       title: '海阔天空',
       date: '2024.12.27',
-      thumbnail: 'https://github.com/YWinson/Neozark/blob/main/444c194c5004ae96847e3f14186a93e69c6d8f85.jpg?raw=true',
+      thumbnail: 'https://i0.hdslb.com/bfs/openplatform/c4227d221b530a86ed93360aa38da07a0cecf353.jpg@1e_1c.webp',
       videoUrl: 'https://www.bilibili.com/video/BV1WxCHYmEYA/?share_source=copy_web&vd_source=156ce83d5268220b4f08d90328b6d141',
     },
   ];
@@ -318,7 +318,7 @@ export default function App() {
         {/* 乐队宣传图 - 建议替换为您的真实图片路径 */}
         <div className={`absolute inset-0 transition-opacity duration-1000 ${heroImageLoaded ? 'opacity-100' : 'opacity-0'}`}>
           <img
-            src="https://github.com/YWinson/Neozark/blob/main/DSC01514.JPG?raw=true"
+            src="https://i0.hdslb.com/bfs/openplatform/fe8939b9663e1156691422f24822c942513fff40.jpg@1e_1c.webp"
             alt="Neozark 乐队宣传图"
             className="absolute inset-0 w-full h-full object-cover brightness-[0.7] transition-transform duration-[10s] hover:scale-110"
             referrerPolicy="no-referrer"
@@ -398,7 +398,7 @@ export default function App() {
             <div className="absolute -inset-4 border-2 border-[#e63946] opacity-30 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="overflow-hidden rounded-sm">
               <img
-                src="https://github.com/YWinson/Neozark/blob/main/DSC01563.JPG?raw=true"
+                src="https://i0.hdslb.com/bfs/openplatform/613c6189d3a26d92d694eafa3fdfcb0a2050ea0a.jpg@1e_1c.webp"
                 alt="乐队排练"
                 className="relative w-full h-auto transition-all duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
@@ -496,7 +496,7 @@ export default function App() {
               <div className="relative w-48 h-48 mb-6 bg-white p-2 rounded-sm overflow-hidden">
                 {/* 请将此处替换为您的 B站 真实二维码图片链接 */}
                 <img 
-                  src="https://github.com/YWinson/Neozark/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260402001941_228_254.jpg?raw=true" 
+                  src="https://i0.hdslb.com/bfs/openplatform/00fdbafe690123e07d6466c0a333cee86c4ff87f.jpg@1e_1c.webp" 
                   alt="Bilibili 二维码"
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {
@@ -513,7 +513,7 @@ export default function App() {
               <div className="relative w-48 h-48 mb-6 bg-white p-2 rounded-sm overflow-hidden">
                 {/* 请将此处替换为您的 小红书 真实二维码图片链接 */}
                 <img 
-                  src="https://github.com/YWinson/Neozark/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260402001943_229_254.jpg?raw=true" 
+                  src="https://i0.hdslb.com/bfs/openplatform/704cbb489f80643632a15c27cf42b4d36541e94c.jpg@1e_1c.webp" 
                   alt="小红书 二维码"
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {
