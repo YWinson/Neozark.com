@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="230" fill="#121212" stroke="#e63946" stroke-width="16" />
+  <!-- Left Pillar (White) -->
+  <path d="M155 160 L205 140 V352 L155 372 Z" fill="#ffffff" />
+  <!-- Center Diagonal (Brand Red) -->
+  <path d="M205 140 L307 312 V372 L205 200 Z" fill="#e63946" />
+  <!-- Right Pillar (White) -->
+  <path d="M307 160 L357 140 V352 L307 372 Z" fill="#ffffff" />
+</svg>
